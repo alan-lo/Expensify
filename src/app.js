@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Link } from 'react-router-dom';
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import './styles/style.scss';
 
@@ -29,14 +29,21 @@ const Help = ()=>{
   );
 }
 
+const NotFoundPage = ()=>{
+  return(
+    <div>404!</div>
+  );
+}
+
 const routes = (
   <BrowserRouter>
-    <div>
+    <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true}/>
       <Route path="/create" component={AddExpense} />
       <Route path="/edit" component={Edit}/>
-      <Route path="/help" component={Help}/>  
-    </div>
+      <Route path="/help" component={Help}/> 
+      <Route component={NotFoundPage}/>   
+    </Switch>
   </BrowserRouter>
 );
 
