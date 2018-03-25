@@ -42,3 +42,4 @@ Thumbs.db
 
 # Exclude Folders
 node_modules/
+playground/
