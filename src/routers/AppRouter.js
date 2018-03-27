@@ -16,6 +16,7 @@ return (
     <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true}/>
       <Route path="/create" component={AddExpense} />
+      <Route path="/edit/:id" component={EditExpense}/>
       <Route path="/help" component={Help}/> 
       <Route component={NotFoundPage}/>   
     </Switch>

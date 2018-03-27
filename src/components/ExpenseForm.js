@@ -10,7 +10,8 @@ class ExpenseForm extends Component{
     note: '',
     amount: '',
     createdAt: moment(),
-    focused: false
+    focused: false,
+    error: ''
   }
 
   onDescriptionChange = (e)=>{
@@ -40,22 +41,44 @@ class ExpenseForm extends Component{
     this.setState(()=>({focused}));   
   }
 
+  onSubmitForm = (e)=>{
+    e.preventDefault();
+
+    if (!this.state.description || !this.state.amount){
+      this.setState(()=>({
+        error:'Please provide description and amount.'
+      }))
+    }else{
+      this.setState(()=>({
+        error:''
+      }))
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      })
+    }
+  }
   render(){
     return(
       <div>
-        <form>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmitForm}>
         <input 
           type="text" 
           placeholder="description" 
           autoFocus
           value={this.state.description}
           onChange={this.onDescriptionChange}
+          name="description"
         />
         <input 
           type="text" 
           placeholder="amount"
           value={this.state.amount}
           onChange={this.onAmountChange}
+          name="amount"
         />
         <SingleDatePicker
           date={this.state.createdAt}
