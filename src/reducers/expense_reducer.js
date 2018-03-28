@@ -9,8 +9,6 @@ const expensesReducer = (state = expenseReducerDefaultState, action)=>{
       return state.filter(({id})=> id!==action.id);
     break;
     case 'EDIT_EXPENSE':
-      console.log(action.updates);
-
       return state.map((expense)=>{
         if (expense.id == action.id){
           return {

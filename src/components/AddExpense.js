@@ -12,7 +12,7 @@ const AddExpense = (props)=>{
           props.dispatch(addExpense(expense))
           props.history.push('/')
         }
-      } 
+      }
       />
     </div>
   );

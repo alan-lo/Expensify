@@ -16,7 +16,6 @@ const store = configureStore();
 store.subscribe(()=>{
   const state = store.getState();
   const visible = getVisibleExpenses(state.expenses, state.filters);
-  console.log(state);
   console.log(visible);
 })
 
