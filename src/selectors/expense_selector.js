@@ -2,9 +2,9 @@
 const getVisibleExpenses = (expenses, {text, sortBy ,startDate, endDate})=>{
   // return expenses;  
   // console.log(expenses , text, startDate, endDate );
-  return expenses.filter((expense)=>{
-    const startDateMatch = typeof startDate !=='number' || expense.createdAt >= startDate;
-    const endDateMatch   = typeof endDate   !=='number' || expense.createdAt <= endDate; 
+  return expenses.filter((expense) => {
+    const startDateMatch   = startDate ? startDate.isSameOrBefore(expense.createdAt) : true;
+    const endDateMatch     = endDate   ? endDate.isSameOrAfter(expense.createdAt)    : true;
     const regStr = new RegExp(`.*${text}.*`,'i');
     const textMatch = expense.description.match(regStr);
     return startDateMatch && endDateMatch && textMatch;  
