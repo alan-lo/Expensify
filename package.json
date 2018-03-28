@@ -11,6 +11,7 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.11",
+    "jest": "^22.4.3",
     "moment": "^2.21.0",
     "normalize.css": "^8.0.0",
     "react": "^16.2.0",
@@ -27,7 +28,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack --mode development --watch",
-    "dev-server": "webpack-dev-server --mode development"
+    "dev-server": "webpack-dev-server --mode development",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
