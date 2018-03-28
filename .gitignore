@@ -40,6 +40,9 @@ Thumbs.db
 /log/*.log
 /tmp
 
+.gitignore
+
 # Exclude Folders
 node_modules/
 playground/
+
