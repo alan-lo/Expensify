@@ -1,6 +1,6 @@
 import expensesReducer from '../../reducers/expense_reducer';
 import moment from 'moment';
-import {expenses} from '../fixtures/expenses';
+import expenses from '../fixtures/expenses';
 
 test('should set default case', ()=>{
  const state =  expensesReducer(undefined, {type: '@@type'});

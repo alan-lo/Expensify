@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const expenses = [
+const expenses = [
   {
     id: 1,
     description: 'gas',
@@ -23,3 +23,4 @@ export const expenses = [
     createdAt: moment(0).add(4,'days').valueOf()
   }
   ]
+  export default expenses;
