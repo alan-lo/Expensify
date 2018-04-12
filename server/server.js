@@ -3,7 +3,7 @@ const App = Express();
 const Morgan = require('morgan');
 const Path = require('path');
 const publicPath = Path.join(__dirname,'..' , 'public');
-
+const port = process.env.PORT || 3000;
 
 App.use(Morgan('tiny'));
 
@@ -13,6 +13,6 @@ App.get('*', (req, res)=>{
    res.sendFile(Path.join(publicPath, 'index.html'));
 })
 
-App.listen(3000, ()=>{
+App.listen(port, ()=>{
   console.log('server is running.');  
 })

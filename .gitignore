@@ -44,5 +44,8 @@ Thumbs.db
 
 # Exclude Folders
 node_modules/
-playground/
-
+Src/playground
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
